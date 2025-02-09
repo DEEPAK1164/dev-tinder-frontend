@@ -7,7 +7,7 @@ import axios from 'axios';
 import { BASE_URL } from '../utils/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import backgroundImage from "../images/dev5.webp"; // Import the image
+import backgroundImage from "../images/t1.jpg"; // Import the image
 
 
 function Body() {
