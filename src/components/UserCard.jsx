@@ -3,6 +3,7 @@ import { BASE_URL } from '../utils/constants'
 import { useDispatch } from 'react-redux';
 import { removeUserFromFeed } from '../utils/feedSlice';
 import axios from 'axios';
+
 // const UserCard = ({user}) => {
 //   // console.log(user);
 //   const {firstName,lastName,photoUrl,age,gender,about}=user;
@@ -38,7 +39,9 @@ const dispatch=useDispatch();
     const handleSendRequest=async(status,_id)=>{
       try{
         const res=await axios.post(BASE_URL+"/request/send/"+status+"/"+_id,{},{withCredentials:true});
-    
+        console.log("User ID:", _id);
+        console.log("Auth headers:", document.cookie); // Check if auth cookie exists
+        
         dispatch(removeUserFromFeed(_id));
       }
      catch(err){
